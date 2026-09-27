@@ -1,0 +1,8 @@
+rules_version = '2';
+service cloud.firestore {
+ match /databases/{database}/documents {
+  function admin(){return request.auth!=null && request.auth.token.email == 'AMU_ADMIN_EMAIL';}
+  match /shops/{id}{allow read:if true;allow create,update,delete:if admin();}
+  match /news/{id}{allow read:if true;allow create,update,delete:if admin();}
+ }
+}
