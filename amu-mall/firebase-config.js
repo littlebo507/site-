@@ -1,1 +1,10 @@
-export const firebaseConfig={apiKey:"YOUR_API_KEY",authDomain:"YOUR_PROJECT.firebaseapp.com",projectId:"YOUR_PROJECT_ID",storageBucket:"YOUR_PROJECT.firebasestorage.app",messagingSenderId:"YOUR_SENDER_ID",appId:"YOUR_APP_ID"};
+export const firebaseConfig = {
+  apiKey: "AIzaSyBc6ryd2631V5NvPDodhxOnfx_WmI4oAzQ",
+  authDomain: "amu-mall.firebaseapp.com",
+  databaseURL: "https://amu-mall-default-rtdb.firebaseio.com",
+  projectId: "amu-mall",
+  storageBucket: "amu-mall.firebasestorage.app",
+  messagingSenderId: "622244499157",
+  appId: "1:622244499157:web:e46c3921cd7fa0ccbe5c5c",
+  measurementId: "G-3T6XFHD67J"
+};
