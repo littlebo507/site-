@@ -1,8 +1,25 @@
 rules_version = '2';
+
 service cloud.firestore {
- match /databases/{database}/documents {
-  function admin(){return request.auth!=null && request.auth.token.email == 'AMU_ADMIN_EMAIL';}
-  match /shops/{id}{allow read:if true;allow create,update,delete:if admin();}
-  match /news/{id}{allow read:if true;allow create,update,delete:if admin();}
- }
+  match /databases/{database}/documents {
+
+    function isAdmin() {
+      return request.auth != null
+        && request.auth.token.email == 'bathuu635@gmail.com';
+    }
+
+    match /shops/{shopId} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+    }
+
+    match /news/{newsId} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
 }
